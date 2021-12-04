@@ -1,6 +1,35 @@
 .annonce-card{
     margin : 10px ; 
+    text-align: center;
+    cursor: pointer;
+    
 }
 img{
     max-width: inherit;
+    border : 1px solid white ; 
+    border-radius: 10px;
+    overflow: hidden;
+}
+img:hover{
+    width : 300px ; 
+    
+}
+.annonce-card:hover{
+    border : 2px solid #4d4e54 ; 
+    padding : 10px ;
+    border-radius: 5px ;
+    
+}
+.demander-button{
+    background: #333333;
+    border : 1px solid #333333 ; 
+    border-radius: 10px;
+    padding : 5px ; 
+    color : white ; 
+    font-size : 20px ; 
+    width: 300px;
+    text-align: center;
+}
+.annonce-price{
+    font-size: 16px;
 }
