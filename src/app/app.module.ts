@@ -18,6 +18,7 @@ import { RightsReservedComponent } from './rights-reserved/rights-reserved.compo
 import { AnnoncesComponent } from './annonces/annonces.component';
 import { AnnonceComponent } from './annonce/annonce.component';
 import { SignUpIntermComponent } from './sign-up-interm/sign-up-interm.component';
+import { MapComponent } from './map/map.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { SignUpIntermComponent } from './sign-up-interm/sign-up-interm.component
     AnnoncesComponent,
     AnnonceComponent,
     SignUpIntermComponent,
+    MapComponent,
     
     
   ],
