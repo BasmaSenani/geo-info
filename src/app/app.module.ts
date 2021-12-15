@@ -17,6 +17,8 @@ import { BodyComponent } from './body/body.component';
 import { RightsReservedComponent } from './rights-reserved/rights-reserved.component';
 import { AnnoncesComponent } from './annonces/annonces.component';
 import { AnnonceComponent } from './annonce/annonce.component';
+import { SignUpIntermComponent } from './sign-up-interm/sign-up-interm.component';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +31,10 @@ import { AnnonceComponent } from './annonce/annonce.component';
     BodyComponent,
     RightsReservedComponent,
     AnnoncesComponent,
-    AnnonceComponent
+    AnnonceComponent,
+    SignUpIntermComponent,
+    
+    
   ],
   imports: [
     BrowserModule,

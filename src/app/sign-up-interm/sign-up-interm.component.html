@@ -1,0 +1,149 @@
+<body>
+    <div class="w3l-head">
+    <h1>Intermediaire Sign UP form</h1>
+    </div>
+    <div class="w3ls-form">
+        <form class="login100-form validate-form" (ngSubmit)="onSubmit(f)" #f="ngForm" >
+            <div class="w3l-last-grid1">
+                <div class="w3l-grid1">
+                    <label class="text">First name</label>
+                    <div class="w3l-div">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <input type="text" name="firstname" 
+                        placeholder="First name" ngModel required>
+                    </div>
+                </div> 
+                <div class="w3l-grid2">
+                <label class="text">Last name</label>
+                <div class="w3l-div">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <input type="text"  name="lastname" 
+                    placeholder="Last name" ngModel required>
+                </div>
+                </div>
+                <div class="clear"></div>
+            </div>	
+           
+            <div class="w3l-last-grid1">
+                <div class="w3l-grid1">
+                    <label class="text">Your Email</label>
+                    <div class="w3l-div">
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        <input type="email" name="email" 
+                        placeholder="Email" ngModel required>
+                    </div>
+                </div>
+                <div class="w3l-grid2">
+                    <label class="text">phone number</label>
+                    <div class="w3l-div">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <input type="text" name="telephone" 
+                        placeholder="Telephone" ngModel required>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="w3l-last-grid1">
+                <div class="w3l-grid1">
+                    <label class="text">Username</label>
+                    <div class="w3l-div">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <input type="text" name="username" 
+                        placeholder="Username" ngModel required>
+                    </div>
+                </div> 
+                <div class="w3l-grid2">
+                    <label class="text">Password</label>
+                    <div class="w3l-div">
+                         <i class="fa fa-lock" aria-hidden="true"></i>
+                         <input  type="password"  name="password"  placeholder="Password" ngModel required>
+                     </div>
+                </div>
+                <div class="clear"></div>
+            </div>	
+
+
+            <div class="w3l-last-grid1">
+                <div class="w3l-grid1">	
+                    <label class="text">address</label>
+                    <div class="w3l-div">
+                        <i class="fa fa-location-arrow" aria-hidden="true"></i>
+                        <input type="text"  name="adresse" 
+                        placeholder="Adresse" ngModel required>
+                    </div>
+                </div>
+                <div class="w3l-grid2">	
+                    <label class="text">city</label>
+                    <div class="w3l-div">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <input type="text" name="ville_RC" 
+                        placeholder="Ville (RC)" ngModel required>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="w3l-right-grid1">
+                <div class="w3l-grid1">
+                    <label class="text">Commune 1</label>
+                    <div class="w3l-div">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <input type="text" name="commune1" 
+                        placeholder="Commune 1" ngModel required>
+                    </div>
+                </div>
+                <div class="w3l-grid2">
+                    <label class="text">Gerant Name</label>
+                    <div class="w3l-div">
+                        <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                        <input type="text"  name="gerant_name" 
+                        placeholder="Gerant Name" ngModel required>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="w3l-right-grid1">
+                <div class="w3l-grid1">
+                    <label class="text">Commune 2</label>
+                    <div class="w3l-div">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <input type="text" name="commune2" 
+                        placeholder="Commune 2" ngModel required>
+                    </div>
+                </div>
+                <div class="w3l-grid2">
+                    <label class="text">Numéro RC</label>
+                    <div class="w3l-div">
+                        <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                        <input type="text" name="N_RC" 
+                        placeholder="Numéro Registre de Commerce (RC)" ngModel required>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            
+            <div class="w3l-right-grid1">
+                <div class="w3l-grid1">
+                    <label class="text">Commune 3</label>
+                    <div class="w3l-div">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <input type="text" name="commune3" 
+                        placeholder="Commune 3" ngModel required>
+                    </div>
+                </div>
+                <div class="w3l-grid2">
+                    <p>fghj</p>
+                    <p>gfhjk</p>
+                    
+                </div>
+               
+                <div class="clear"></div>
+            </div>
+            <div class="w3ls-submit">
+               <!-- <input type="submit" [disabled]="f.invalid" value="SIGN UP">-->
+               <button  type="submit" [disabled]="f.invalid">SIGN UP</button>
+            </div>
+    </form>
+    </div>
+</body>
