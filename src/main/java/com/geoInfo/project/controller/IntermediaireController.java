@@ -55,7 +55,7 @@ public class IntermediaireController {
 	// add inter
 
 	@RequestMapping(method= RequestMethod.POST,value="/intermediaires")
-	public Intermediaire saveIntermediaire(Intermediaire intermediaire) {
+	public Intermediaire saveIntermediaire(@RequestBody Intermediaire intermediaire) {
 		Intermediaire savedIntermediaire = intermediaireRepository.save(intermediaire);
 		return savedIntermediaire;
 	}

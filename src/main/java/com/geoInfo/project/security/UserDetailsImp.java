@@ -2,6 +2,7 @@ package com.geoInfo.project.security;
 
 import com.geoInfo.project.model.Admin;
 import com.geoInfo.project.model.Intermediaire;
+import com.geoInfo.project.model.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -20,7 +21,7 @@ public class UserDetailsImp implements UserDetails {
 
 
 
-    public UserDetailsImp(Admin user) {
+    public UserDetailsImp(User user) {
         this.username=user.getUsername();
         this.password=user.getPassword();
         this.authorities= Arrays.stream(user.getRoles()

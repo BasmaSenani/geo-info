@@ -8,16 +8,18 @@ import lombok.ToString;
 import javax.persistence.*;
 
 @Entity
-@Data @NoArgsConstructor @AllArgsConstructor @ToString
-public class Admin extends User{
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@Table(name="`User`")
+
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  Long id ;
-    @Column(unique = true)
+    private Long id ;
     private String username ;
-
-    private String password;
-
+    private String password ;
     private String roles ;
 }
