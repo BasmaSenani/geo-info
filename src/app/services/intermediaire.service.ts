@@ -12,25 +12,14 @@ export class IntermediaireService {
 
   intermediairesSubject = new Subject<any[]>();
   //
-  //
-  private users: Intermediaire[] = [];
-  userSubject = new Subject<Intermediaire[]>();
-
-  emitUsers() {
-    this.userSubject.next(this.users.slice());
-  }
-
-  addUser(user: Intermediaire) {
-    this.users.push(user);
-    this.emitUsers();
-  }
-  //
+  
 
  
 
    subject = new Subject();
 
   _url="http://localhost:8080";
+  private baseURL = "http://localhost:8080/intermediaires";
 
   constructor(public httpClient:HttpClient) { }
 
@@ -38,30 +27,18 @@ export class IntermediaireService {
     return this.httpClient.get<any[]>(this._url+"/intermediaires");
   }
 
-  public saveInter(interm:Intermediaire) {
-    return this.httpClient.post<string>(this._url+"/intermediaires", interm);
+  //list inter
+  public findAll(): Observable<Intermediaire[]> {
+    return this.httpClient.get<Intermediaire[]>(this._url+"/intermediaires");
+  }
+  //
+  //create
+  createEmployee(inter: Intermediaire): Observable<Object>{
+    return this.httpClient.post(`${this.baseURL}`, inter);
   }
 
-  public  addInterm(firstname: string, lastname: string,telephone: string,username: string,password: string,adresse: string,ville_RC: string,N_RC: string,gerant_name: string,commune1: string,commune2: string,commune3: string,email: string) {
-    
-   //const inter= new Intermediaire(firstname, lastname,telephone,username,password,adresse,ville_RC,N_RC,gerant_name,commune1,commune2,commune3,email); 
-   //this.addUser(inter); 
-   //this.saveInter(inter); 
-   //this.saveIntermtoserver(inter);
-    
-    
-}
-
-  saveIntermtoserver(interm:Intermediaire){
-    this.httpClient.post<Intermediaire>(this._url+"/intermediaires", interm).subscribe(
-        () => {
-          console.log('Enregistrement terminé !');
-        },
-        (error) => {
-          console.log('Erreur ! : ' + error);
-        }
-      );
-}
+  
+ 
 
 
 }

@@ -17,8 +17,10 @@ import { BodyComponent } from './body/body.component';
 import { RightsReservedComponent } from './rights-reserved/rights-reserved.component';
 import { AnnoncesComponent } from './annonces/annonces.component';
 import { AnnonceComponent } from './annonce/annonce.component';
-import { SignUpIntermComponent } from './sign-up-interm/sign-up-interm.component';
+
 import { MapComponent } from './map/map.component';
+import { InterListComponent } from './inter-list/inter-list.component';
+import { InterFormComponent } from './inter-form/inter-form.component';
 
 
 @NgModule({
@@ -33,8 +35,9 @@ import { MapComponent } from './map/map.component';
     RightsReservedComponent,
     AnnoncesComponent,
     AnnonceComponent,
-    SignUpIntermComponent,
     MapComponent,
+    InterListComponent,
+    InterFormComponent,
     
     
   ],

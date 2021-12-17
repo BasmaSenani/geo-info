@@ -1,0 +1,29 @@
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">User Name</th>
+            <th scope="col">Password</th>
+            <th scope="col">Ville</th>
+            <th scope="col">Adresse</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let intermediaire of intermediaires">
+            <td>{{ intermediaire.firstName }}</td>
+            <td>{{ intermediaire.lastName }}</td>
+            <td><a href="mailto:{{ intermediaire.email }}">{{ intermediaire.email }}</a></td>
+            <td>{{ intermediaire.username }}</td>
+            <td>{{ intermediaire.password }}</td>
+            <td>{{ intermediaire.ville }}</td>
+            <td>{{ intermediaire.adresse }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
