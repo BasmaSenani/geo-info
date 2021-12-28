@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SignUpIntermComponent } from './sign-up-interm.component';
+import { InterFormComponent } from './inter-form.component';
 
-describe('SignUpIntermComponent', () => {
-  let component: SignUpIntermComponent;
-  let fixture: ComponentFixture<SignUpIntermComponent>;
+describe('InterFormComponent', () => {
+  let component: InterFormComponent;
+  let fixture: ComponentFixture<InterFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SignUpIntermComponent ]
+      declarations: [ InterFormComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SignUpIntermComponent);
+    fixture = TestBed.createComponent(InterFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -17,11 +17,10 @@ import { BodyComponent } from './body/body.component';
 import { RightsReservedComponent } from './rights-reserved/rights-reserved.component';
 import { AnnoncesComponent } from './annonces/annonces.component';
 import { AnnonceComponent } from './annonce/annonce.component';
-import { SignUpIntermComponent } from './sign-up-interm/sign-up-interm.component';
+
 import { MapComponent } from './map/map.component';
-import { CommonModule } from '@angular/common';
+import { InterFormComponent } from './inter-form/inter-form.component';
 import { AnnoncesService } from './services/annonces.service';
-import { DemandesComponent } from './demandes/demandes.component';
 
 
 @NgModule({
@@ -36,10 +35,8 @@ import { DemandesComponent } from './demandes/demandes.component';
     RightsReservedComponent,
     AnnoncesComponent,
     AnnonceComponent,
-    SignUpIntermComponent,
     MapComponent,
-    DemandesComponent,
-    
+    InterFormComponent,
     
     
   ],
@@ -51,7 +48,7 @@ import { DemandesComponent } from './demandes/demandes.component';
     HttpClientModule,
     MatTableModule,
     MatIconModule,
-    CommonModule
+    
   ],
   providers: [AnnoncesService],
   bootstrap: [AppComponent]

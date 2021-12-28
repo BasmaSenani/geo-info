@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IntermediaireService } from '../services/intermediaire.service';
 
 @Component({
-  selector: 'app-sign-up-interm',
-  templateUrl: './sign-up-interm.component.html',
-  styleUrls: ['./sign-up-interm.component.css']
+  selector: 'app-inter-form',
+  templateUrl: './inter-form.component.html',
+  styleUrls: ['./inter-form.component.css']
 })
-export class SignUpIntermComponent implements OnInit {
+export class InterFormComponent implements OnInit {
 
+  constructor(private intermediairesService: IntermediaireService) {}
   
-  constructor(private intermediairesService: IntermediaireService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   onSubmit(f: NgForm) {
   
