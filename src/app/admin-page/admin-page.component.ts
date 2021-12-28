@@ -9,7 +9,7 @@ import { IntermediaireService } from '../services/intermediaire.service';
 export class AdminPageComponent implements OnInit {
 
   intermediaires:any[] =[]
-  displayedColumns: string[] = ['username', 'commune1', 'commune2','commune3','validate',"reject"];
+  displayedColumns: string[] = ['username', 'commune1', 'commune2','commune3'];
 
   constructor(public interService:IntermediaireService) { }
 

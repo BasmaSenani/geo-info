@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Intermediaire } from '../intermediaire';
 import { IntermediaireService } from '../services/intermediaire.service';
 
 @Component({
@@ -10,30 +10,21 @@ import { IntermediaireService } from '../services/intermediaire.service';
 })
 export class InterFormComponent implements OnInit {
 
-  intermediaire!:Intermediaire;
-  constructor( private route: ActivatedRoute, 
-    private router: Router, 
-      private intermediareService: IntermediaireService) {
-        this.intermediaire= new Intermediaire();
-       }
-
-       //
-       saveEmployee(){
-        this.intermediareService.createEmployee(this.intermediaire).subscribe( data =>{
-          console.log(data);
-          
-        },
-        error => console.log(error));
-      }
-       //
-  
-  onSubmit(){
-    console.log(this.intermediaire);
-    this.saveEmployee();
-  }
-
+  constructor(private intermediairesService: IntermediaireService) {}
   
 
   ngOnInit(): void { }
+
+  onSubmit(f: NgForm) {
+  
+    f.value['roles']="ROLE_INTER"
+    console.log(f.value);
+    this.intermediairesService.saveInter(f.value).subscribe(
+     res => console.log(res),
+     err => console.log(err)   
+     );
+   
+   
+}
 
 }

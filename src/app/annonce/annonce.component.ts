@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-annonce',
@@ -9,9 +10,13 @@ export class AnnonceComponent implements OnInit {
 
   @Input() annonce:any ; 
 
-  constructor() { }
+  constructor( private route:Router) { }
 
   ngOnInit(): void {
+  }
+
+  onClick(){
+    this.route.navigate(['demandes/'+this.annonce.gid])
   }
 
 }

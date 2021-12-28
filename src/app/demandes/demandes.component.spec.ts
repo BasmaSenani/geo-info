@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InterListComponent } from './inter-list.component';
+import { DemandesComponent } from './demandes.component';
 
-describe('InterListComponent', () => {
-  let component: InterListComponent;
-  let fixture: ComponentFixture<InterListComponent>;
+describe('DemandesComponent', () => {
+  let component: DemandesComponent;
+  let fixture: ComponentFixture<DemandesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InterListComponent ]
+      declarations: [ DemandesComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InterListComponent);
+    fixture = TestBed.createComponent(DemandesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

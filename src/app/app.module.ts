@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon'; 
@@ -19,9 +19,13 @@ import { AnnoncesComponent } from './annonces/annonces.component';
 import { AnnonceComponent } from './annonce/annonce.component';
 
 import { MapComponent } from './map/map.component';
-import { InterListComponent } from './inter-list/inter-list.component';
 import { InterFormComponent } from './inter-form/inter-form.component';
+<<<<<<< HEAD
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+=======
+import { AnnoncesService } from './services/annonces.service';
+
+>>>>>>> e9d0a8563bc7c6b30c69e95b73e29cca198d382a
 
 @NgModule({
   declarations: [
@@ -36,7 +40,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AnnoncesComponent,
     AnnonceComponent,
     MapComponent,
-    InterListComponent,
     InterFormComponent,
     
     
@@ -49,9 +52,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     MatTableModule,
     MatIconModule,
+<<<<<<< HEAD
     BrowserAnimationsModule
+=======
+    
+>>>>>>> e9d0a8563bc7c6b30c69e95b73e29cca198d382a
   ],
-  providers: [],
+  providers: [AnnoncesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

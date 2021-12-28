@@ -1,16 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import * as L from 'leaflet';
 import * as g from 'leaflet-geoserver-request';
 
+=======
+//import * as L from 'leaflet';
+>>>>>>> e9d0a8563bc7c6b30c69e95b73e29cca198d382a
 
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
 })
-export class MapComponent implements OnInit {
+export class MapComponent {
 
-  private map!: L.Map;
+ /* private map!: L.Map;
   private centroid: L.LatLngExpression = [33.5731, -7.5898]; //casa ° N, ° W
 
   private initMap(): void {
@@ -69,6 +73,6 @@ L.Marker.prototype.options.icon = iconDefault;
 
   ngOnInit(): void {
     this.initMap();
-  }
+  }*/
 
 }

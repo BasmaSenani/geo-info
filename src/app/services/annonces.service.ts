@@ -1,59 +1,36 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AnnoncesService {
 
-  annonces = [
-    {
-      id: 1 ,
-      title : "annonce1",
-      description:"cet annonce est tres interessante",
-      price : 200 , 
-      disponibilité : true 
-    } , 
-    {
-      id: 2 ,
-      title : "annonce2",
-      description:"cet annonce est tres interessante",
-      price : 300 , 
-      disponibilité : true 
-    } , 
-    {
-      id: 3 ,
-      title : "annonce3",
-      description:"cet annonce est tres interessante",
-      price : 400 , 
-      disponibilité : true 
-    } , 
-    {
-      id: 1 ,
-      title : "annonce1",
-      description:"cet annonce est tres interessante",
-      price : 200 , 
-      disponibilité : true 
-    } , 
-    {
-      id: 2 ,
-      title : "annonce2",
-      description:"cet annonce est tres interessante",
-      price : 300 , 
-      disponibilité : true 
-    } , 
-    {
-      id: 3 ,
-      title : "annonce3",
-      description:"cet annonce est tres interessante",
-      price : 400 , 
-      disponibilité : true 
-    } , 
+  _url = "http://localhost:8081/api/v1/";
 
-  ]
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
-  getAnnonces(){
-     return [...this.annonces];
+ public getAnnonce(page:number):Observable<any[]>{
+    return this.http.get<any[]>(this._url+"annonces?page="+page);
   }
+
+  public getAnnoncePages():Observable<any>{
+    return this.http.get<any>(this._url+"annoncesPages");
+  
+  }
+
+  public getAnnonceByOperation(page:number,operation:string):Observable<any[]>{
+    return this.http.get<any[]>(this._url+"annonces/operation/"+operation+"?page="+page);
+  }
+    
+  public getAnnonceByType(page:number,type:string):Observable<any[]>{
+    return this.http.get<any[]>(this._url+"annonces/type/"+type+"?page="+page);
+  }
+
+  public getAnnonceByCommune(page:number,commune:string):Observable<any[]>{
+    return this.http.get<any[]>(this._url+"annonces/commune/"+commune+"?page="+page);
+  }
+  
 }

@@ -31,5 +31,14 @@ img:hover{
     text-align: center;
 }
 .annonce-price{
-    font-size: 16px;
+    font-size: 20px;
+    position: absolute;
+    color: white;
+    top: 5%;
+    left :83% ; 
+
+}
+.annonce-operation{
+    font-style: italic;
+    margin-left: 20px ;
 }
