@@ -21,7 +21,7 @@ import { AnnonceComponent } from './annonce/annonce.component';
 import { MapComponent } from './map/map.component';
 import { InterListComponent } from './inter-list/inter-list.component';
 import { InterFormComponent } from './inter-form/inter-form.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -48,7 +48,8 @@ import { InterFormComponent } from './inter-form/inter-form.component';
     FormsModule,
     HttpClientModule,
     MatTableModule,
-    MatIconModule
+    MatIconModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
