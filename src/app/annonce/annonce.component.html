@@ -1,17 +1,20 @@
 
-<div class="annonce-card">
+<div class="annonce-card"(click)="onClick()" >
     <div>
         <img src="assets/statistiques.jpg" 
         alt="annonce image"
         width="330px"
         height="330px"/>
     </div>
-    <div>
-        <h3 class="annonce-title"><strong>{{annonce.title}}</strong></h3>
+    <div >
+        <div style="text-align: center;">
+            <div style="width: fit-content;display: flex;margin-left: auto;margin-right: auto;">
+                <h3 class="annonce-title"><strong>{{annonce.typeBien}}</strong></h3>
+                 <p class="annonce-operation">{{annonce.typeOperation}}</p>
+            </div> 
+        </div>
         <p class="annonce-description">{{annonce.description}}</p> 
-        <span class="annonce-price"><strong>{{annonce.price}}</strong></span>
+        <span class="annonce-price"><strong>{{annonce.prix}}</strong></span>
     </div>
-    <div>
-        <button type="button" class="demander-button">Demander</button>
-    </div>
+    
 </div>

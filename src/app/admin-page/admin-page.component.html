@@ -1,40 +1,19 @@
-<div *ngIf="intermediaires">
-    <table mat-table [dataSource]="intermediaires" class="mat-elevation-z8">
-      
-      <ng-container matColumnDef="username">  
-        <th mat-header-cell *matHeaderCellDef> Username </th>
-        <td mat-cell *matCellDef="let element"> {{element.username} </td>
-      </ng-container>
-    
-    
-      <ng-container matColumnDef="commune1">
-        <th mat-header-cell *matHeaderCellDef> Commune 1 </th>
-        <td mat-cell *matCellDef="let element"> {{element.Commune1}} </td>
-      </ng-container>
-    
-      
-      <ng-container matColumnDef="commune2">
-        <th mat-header-cell *matHeaderCellDef> Commune 2 </th>
-        <td mat-cell *matCellDef="let element"> {{element.Commune2}} </td>
-      </ng-container>
-    
-      
-      <ng-container matColumnDef="commune3">
-        <th mat-header-cell *matHeaderCellDef> Commune 3 </th>
-        <td mat-cell *matCellDef="let element"> {{element.Commune3}} </td>
-      </ng-container>
-  
-      <ng-container matColumnDef="validate">
-        <th mat-header-cell *matHeaderCellDef> Validate </th>
-        <td mat-cell *matCellDef="let element"><button mat-raised-button color="accent" (click)="onValidate(element)">Validate</button> </td>
-      </ng-container>
-  
-      <ng-container matColumnDef="reject">
-        <th mat-header-cell *matHeaderCellDef> Reject </th>
-        <td mat-cell *matCellDef="let element"><button mat-raised-button color="accent" (click)="onReject(element)">Reject</button> </td>
-      </ng-container>
-    
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
-  </div> 
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" *ngFor="let column of displayedColumns">{{column}}</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let element of intermediaires">
+        <th scope="row">{{element.username}}</th>
+        <td>{{element.commune1}}</td>
+        <td>{{element.commune2}}</td>
+        <td>{{element.commune3}}</td>
+        <button class="btn btn-success btn-lg">Valider</button>
+        <button class="btn btn-danger btn-lg">Regeter</button>
+      </tr>
+    </tbody>
+  </table>

@@ -9,7 +9,7 @@
                     <label class="text">First name</label>
                     <div class="w3l-div">
                         <i class="fa fa-user" aria-hidden="true"></i>
-                        <input type="text" name="firstname" 
+                        <input type="text" name="firstName" 
                         placeholder="First name" ngModel required>
                     </div>
                 </div> 
@@ -17,7 +17,7 @@
                 <label class="text">Last name</label>
                 <div class="w3l-div">
                     <i class="fa fa-user" aria-hidden="true"></i>
-                    <input type="text"  name="lastname" 
+                    <input type="text"  name="lastName" 
                     placeholder="Last name" ngModel required>
                 </div>
                 </div>
@@ -77,7 +77,7 @@
                     <label class="text">city</label>
                     <div class="w3l-div">
                         <i class="fa fa-map-marker" aria-hidden="true"></i>
-                        <input type="text" name="ville_RC" 
+                        <input type="text" name="ville" 
                         placeholder="Ville (RC)" ngModel required>
                     </div>
                 </div>
@@ -96,7 +96,7 @@
                     <label class="text">Gerant Name</label>
                     <div class="w3l-div">
                         <i class="fa fa-address-card-o" aria-hidden="true"></i>
-                        <input type="text"  name="gerant_name" 
+                        <input type="text"  name="gerant_Name" 
                         placeholder="Gerant Name" ngModel required>
                     </div>
                 </div>
@@ -116,7 +116,7 @@
                     <label class="text">Numéro RC</label>
                     <div class="w3l-div">
                         <i class="fa fa-address-card-o" aria-hidden="true"></i>
-                        <input type="text" name="N_RC" 
+                        <input type="text" name="n_RC" 
                         placeholder="Numéro Registre de Commerce (RC)" ngModel required>
                     </div>
                 </div>
@@ -132,6 +132,7 @@
                         placeholder="Commune 3" ngModel required>
                     </div>
                 </div>
+                <input hidden type="text"  name="roles"  placeholder="Password" ngModel value="ROLE_INTER">
                 <div class="w3l-grid2">
                     <p>fghj</p>
                     <p>gfhjk</p>
@@ -144,6 +145,8 @@
                <!-- <input type="submit" [disabled]="f.invalid" value="SIGN UP">-->
                <button  type="submit" [disabled]="f.invalid">SIGN UP</button>
             </div>
+
+
     </form>
     </div>
 </body>

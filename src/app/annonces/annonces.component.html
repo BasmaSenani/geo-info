@@ -1,7 +1,49 @@
 
+<div class="filter-bar">
+    <div class="dropdown">
+        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Tous
+        </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" *ngFor="let element of filters" 
+            (click)="onSubmit(element)" >{{element}}</a>
+          </div>
+      </div>
+
+      <div class="dropdown" *ngIf="isOperation" style="margin-left: 50px ;">
+        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{operationStart}}
+        </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" *ngFor="let element of Operations" 
+            (click)="onOperation(element)" >{{element}}</a>
+          </div>
+      </div>
+      
+
+      <div class="dropdown" *ngIf="isType" style="margin-left: 50px ;">
+        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{typeStart}}
+        </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" *ngFor="let element of Types" 
+            (click)="onType(element)" >{{element}}</a>
+          </div>
+    </div>
+      
+
+
+</div>
 <div class="container">
     <div class="row" style="display: flex;">
         <app-annonce class="col-4" *ngFor="let annonce of annonces"
          [annonce]="annonce"></app-annonce>
     </div>
+</div>
+
+<div class="pagination">
+    <a (click)="onLeft()">&laquo;</a>
+    <a *ngFor="let p of pages;let i=index" 
+    [ngClass]="page==i ? 'active' :''"(click)="onLoad(i)">{{i+1}}</a>
+    <a (click)="onRight()">&raquo;</a>
 </div>

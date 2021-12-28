@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import * as L from 'leaflet';
+//import * as L from 'leaflet';
 
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
 })
-export class MapComponent implements OnInit {
+export class MapComponent {
 
-  private map!: L.Map;
+ /* private map!: L.Map;
   private centroid: L.LatLngExpression = [33.5731, -7.5898]; //casa ° N, ° W
 
   private initMap(): void {
@@ -42,6 +42,6 @@ export class MapComponent implements OnInit {
 
   ngOnInit(): void {
     this.initMap();
-  }
+  }*/
 
 }

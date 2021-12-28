@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { AnnoncesComponent } from './annonces/annonces.component';
 import { BodyComponent } from './body/body.component';
+import { DemandesComponent } from './demandes/demandes.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { MapComponent } from './map/map.component';
 import { AnnoncesService } from './services/annonces.service';
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path:'annonces',component : AnnoncesComponent},
   {path:'signup',component : SignUpIntermComponent},
   {path:'map',component : MapComponent},
-
+  {path:"demandes/:id",component:DemandesComponent}
+  
 ];
 
 @NgModule({

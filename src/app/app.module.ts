@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon'; 
@@ -19,6 +19,9 @@ import { AnnoncesComponent } from './annonces/annonces.component';
 import { AnnonceComponent } from './annonce/annonce.component';
 import { SignUpIntermComponent } from './sign-up-interm/sign-up-interm.component';
 import { MapComponent } from './map/map.component';
+import { CommonModule } from '@angular/common';
+import { AnnoncesService } from './services/annonces.service';
+import { DemandesComponent } from './demandes/demandes.component';
 
 
 @NgModule({
@@ -35,6 +38,8 @@ import { MapComponent } from './map/map.component';
     AnnonceComponent,
     SignUpIntermComponent,
     MapComponent,
+    DemandesComponent,
+    
     
     
   ],
@@ -45,9 +50,10 @@ import { MapComponent } from './map/map.component';
     FormsModule,
     HttpClientModule,
     MatTableModule,
-    MatIconModule
+    MatIconModule,
+    CommonModule
   ],
-  providers: [],
+  providers: [AnnoncesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
