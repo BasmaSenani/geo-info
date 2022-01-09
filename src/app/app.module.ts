@@ -20,12 +20,13 @@ import { AnnonceComponent } from './annonce/annonce.component';
 
 import { MapComponent } from './map/map.component';
 import { InterFormComponent } from './inter-form/inter-form.component';
-<<<<<<< HEAD
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-=======
+
 import { AnnoncesService } from './services/annonces.service';
 
->>>>>>> e9d0a8563bc7c6b30c69e95b73e29cca198d382a
+
+
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { AnnoncesService } from './services/annonces.service';
     InterFormComponent,
     
     
+    
   ],
   imports: [
     BrowserModule,
@@ -52,11 +54,7 @@ import { AnnoncesService } from './services/annonces.service';
     HttpClientModule,
     MatTableModule,
     MatIconModule,
-<<<<<<< HEAD
-    BrowserAnimationsModule
-=======
-    
->>>>>>> e9d0a8563bc7c6b30c69e95b73e29cca198d382a
+    BrowserAnimationsModule,
   ],
   providers: [AnnoncesService],
   bootstrap: [AppComponent]

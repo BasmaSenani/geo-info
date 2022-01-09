@@ -1,20 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-import * as L from 'leaflet';
-import * as g from 'leaflet-geoserver-request';
+import { Component, Input, OnInit } from '@angular/core';
+import { AnnoncesService } from '../services/annonces.service';
 
-=======
-//import * as L from 'leaflet';
->>>>>>> e9d0a8563bc7c6b30c69e95b73e29cca198d382a
+import * as L from 'leaflet';
+import { MapService } from '../services/map.service';
+
+
 
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
 })
-export class MapComponent {
+export class MapComponent implements OnInit {
 
- /* private map!: L.Map;
+@Input() annonces:any ;
+
+  markers = Array();
+  listAnnonce : any;
+  private map!: L.Map;
   private centroid: L.LatLngExpression = [33.5731, -7.5898]; //casa ° N, ° W
 
   private initMap(): void {
@@ -44,35 +47,32 @@ const iconDefault = L.icon({
 });
 L.Marker.prototype.options.icon = iconDefault;
     L.marker([33.5731, -7.5898]).addTo(this.map);
+    
 
     // create 5 random jitteries and add them to map
+  
+
+     
+  
     
     
 
     //
     
-    var test = L.tileLayer.wms("http://localhost:8080/geoserver/ehtp/wfs", {
-      layers: 'ehtp:Communes',
-      format: 'image/png',
-
-      transparent: true,
-      attribution: 'test'
-  });
-    test.addTo(this.map);
-    var wmsLayer = L.tileLayer.wms('http://localhost:8080/geoserver/ehtp/wms', {
-    layers: 'ehtp:AXE_VOIE'
-}).addTo(this.map);
+   
 
     
   
   }
 
-
-
-  constructor() { }
+  constructor(private mapservice:MapService) { }
 
   ngOnInit(): void {
+    
     this.initMap();
-  }*/
+    this.mapservice.makeMarkers(this.map);
+  }
 
 }
+
+

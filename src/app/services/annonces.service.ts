@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AnnoncesService {
+  
 
   _url = "http://localhost:8081/api/v1/";
 
@@ -14,6 +15,10 @@ export class AnnoncesService {
 
  public getAnnonce(page:number):Observable<any[]>{
     return this.http.get<any[]>(this._url+"annonces?page="+page);
+  }
+  //les coordonnées des annonces
+  public getAnnoncesXY():Observable<any[]>{
+    return this.http.get<any[]>(this._url+"annonces");
   }
 
   public getAnnoncePages():Observable<any>{
