@@ -1,4 +1,5 @@
 
+    <span *ngIf="openMessage" style="color: red; font-size: 18px;">Ce produit est déjà réserver</span>
 <div class="annonce-card"(click)="onClick()" >
     <div>
         <img src="assets/statistiques.jpg" 
@@ -15,6 +16,11 @@
         </div>
         <p class="annonce-description">{{annonce.description}}</p> 
         <span class="annonce-price"><strong>{{annonce.prix}}</strong></span>
+    </div>
+
+    <div *ngIf="isInter" style="display: flex;margin-left: 70px;">
+        <button (click)="onReserver()" class="btn btn-dark" style="padding-left:10px ; padding-right: 10px; margin:5px ; font-size : 18px">Réserver</button>
+        <button (click)="onLiberer()" class="btn btn-dark" style="padding-left:10px ; padding-right: 10px;margin:5px ; font-size : 18px" >Libérer</button>
     </div>
     
 </div>

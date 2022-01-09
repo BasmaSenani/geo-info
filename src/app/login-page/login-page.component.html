@@ -12,8 +12,8 @@
                 </span>
 
                 <!--connection error message-->
-                <small *ngIf="!isAuthorized" style="color: red " >this username doesn't have the right credetianls</small>
-                <small *ngIf="!isExists" style="color: red " >this username doesn't exist consider signing up</small>
+                <span *ngIf="!isAuthorized" style="color: red ; font-size : 18px; margin: 10px ;" >this username doesn't have the right credetianls</span>
+                <span *ngIf="!isExists" style="color: red ; font-size : 18px; margin: 10px ;" >this username doesn't exist consider signing up</span>
                 <!--Username-->
 
                 <div class="wrap-input100 validate-input">

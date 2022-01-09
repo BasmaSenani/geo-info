@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import {Router } from '@angular/router';
 import { IntermediaireService } from '../services/intermediaire.service';
 
 @Component({
@@ -10,13 +10,14 @@ import { IntermediaireService } from '../services/intermediaire.service';
 })
 export class InterFormComponent implements OnInit {
 
-  constructor(private intermediairesService: IntermediaireService) {}
+  constructor(private intermediairesService: IntermediaireService , 
+    private router : Router) {}
   
-
+  isSent = false ; 
   ngOnInit(): void { }
 
   onSubmit(f: NgForm) {
-  
+    this.isSent = true ; 
     f.value['roles']="ROLE_INTER"
     console.log(f.value);
     this.intermediairesService.saveInter(f.value).subscribe(
@@ -24,7 +25,10 @@ export class InterFormComponent implements OnInit {
      err => console.log(err)   
      );
    
-   
-}
+  }
+
+  onClick(){
+    this.router.navigate(['/'])
+  }
 
 }

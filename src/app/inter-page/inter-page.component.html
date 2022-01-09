@@ -7,7 +7,7 @@
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" *ngFor="let element of filters" 
             (click)="onSubmit(element)" >{{element}}</a>
-           
+            <a class="dropdown-item" *ngIf="isInter" (click)="onMesAnnonces()">Mes annonces</a>
           </div>
       </div>
 
@@ -39,7 +39,7 @@
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" *ngFor="let element of Communes" 
           (click)="onCommune(element)" >{{element}}</a>
-    </div>
+        </div>
   </div>
       
 
