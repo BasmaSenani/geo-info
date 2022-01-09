@@ -21,9 +21,10 @@ import { AnnonceComponent } from './annonce/annonce.component';
 import { MapComponent } from './map/map.component';
 import { InterFormComponent } from './inter-form/inter-form.component';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { AnnoncesService } from './services/annonces.service';
+import { CommonModule } from '@angular/common';
+import { DemandesComponent } from './demandes/demandes.component';
+import { InterPageComponent } from './inter-page/inter-page.component';
 
 
 
@@ -42,6 +43,8 @@ import { AnnoncesService } from './services/annonces.service';
     AnnonceComponent,
     MapComponent,
     InterFormComponent,
+    DemandesComponent,
+    InterPageComponent
     
     
     
@@ -54,7 +57,8 @@ import { AnnoncesService } from './services/annonces.service';
     HttpClientModule,
     MatTableModule,
     MatIconModule,
-    BrowserAnimationsModule,
+    CommonModule
+
   ],
   providers: [AnnoncesService],
   bootstrap: [AppComponent]

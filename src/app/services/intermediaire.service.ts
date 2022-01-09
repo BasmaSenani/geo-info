@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class IntermediaireService {
 
   _url="http://localhost:8080/intermediaires";
+  
 
   constructor(public httpClient:HttpClient) { }
 
@@ -20,6 +21,9 @@ export class IntermediaireService {
     return this.httpClient.post<any>(this._url,data);
   }
   
+   public getInterByUsername(username:string){
+     return this.httpClient.get<any>(this._url+"/username/"+username);
+   }
     
   
   

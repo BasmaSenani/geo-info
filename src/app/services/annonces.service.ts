@@ -37,5 +37,20 @@ export class AnnoncesService {
   public getAnnonceByCommune(page:number,commune:string):Observable<any[]>{
     return this.http.get<any[]>(this._url+"annonces/commune/"+commune+"?page="+page);
   }
+
+  public getAllCommmunes():Observable<any[]>{
+    return this.http.get<any[]>(this._url+"allCommunes");
+  }
+
+  public updateAnnonce(annonce:any,id:number){
+   return this.http.put<any>(this._url+"annonces/"+id,annonce)
+  }
+
+  public getByIdInter(id:number,page:number):Observable<any[]>{
+    return this.http.get<any[]>(this._url+"annonces/inter/"+id+"?page="+page);
+  }
+
+
+  
   
 }

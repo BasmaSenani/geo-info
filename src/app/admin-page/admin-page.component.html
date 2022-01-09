@@ -1,27 +1,31 @@
-<div class="card my-5">
-  <div class="card-body">
-    <table class="table table-bordered table-striped">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">First Name</th>
-          <th scope="col">Last Name</th>
-          <th scope="col">Email</th>
-          <th scope="col">User Name</th>
-          <th scope="col">Ville</th>
-          <th scope="col">Adresse</th>
-         
+
+
+  <div class="limiter">
+    <div class="container-table100">
+      <div class="wrap-table100">
+        <div class="table100 ver1 m-b-110">
+    <table data-vertable="ver1">
+      <thead>
+        <tr class="row100 head">
+          <th class="column100 column1" data-column="column1" 
+          *ngFor="let column of displayedColumns">{{column}}</th>
+          <th class="column100 column1" style="color: #36304a;" data-column="column1" 
+          >hhhhh</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let intermediaire of intermediaires">
-          <td>{{ intermediaire.firstName }}</td>
-          <td>{{ intermediaire.lastName }}</td>
-          <td><a href="mailto:{{ intermediaire.email }}">{{ intermediaire.email }}</a></td>
-          <td>{{ intermediaire.username }}</td>
-          <td>{{ intermediaire.ville }}</td>
-          <td>{{ intermediaire.adresse }}</td>
+        <tr class="row100" *ngFor="let element of intermediaires">
+          <td class="column100 column1" data-column="column8">{{element.username}}</td>
+          <td class="column100 column1" data-column="column8">{{element.commune1}}</td>
+          <td class="column100 column1" data-column="column8">{{element.commune2}}</td>
+          <td class="column100 column1" data-column="column8">{{element.commune3}}</td>
+          <td class="column100 column1" data-column="column8">{{element.ville}}</td>
+          <div style="display: flex;">
+            <button class="btn btn-success btn-lg column100 columnb">Valider</button>
+            <button class="btn btn-danger btn-lg column100 columnb">Rejeter</button>
+          </div>
         </tr>
       </tbody>
     </table>
   </div>
-</div>
+
