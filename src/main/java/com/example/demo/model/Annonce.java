@@ -31,17 +31,28 @@ public class Annonce{
 	private String surface;
 	private Date dateHeure;
 	private boolean isAvailable ;
+
+	public Long getId_inter() {
+		return idInter;
+	}
+
+	public void setId_inter(Long id_inter) {
+		this.idInter = id_inter;
+	}
+
+	@Column(columnDefinition = "boolean default false")
 	private boolean isReserved ;
+	private Long idInter ;
 	public Annonce() {
 		super();
 	}
 	public Annonce(Long gid, String nomPrenom, long iMEI, String telephone, Blob justif, String prix, String typeBien,
 			String typeOperation, String description, String surface, Date dateHeure, String commune, String point,
-			Blob photo, boolean isReserved, boolean isAvailable) {
+			Blob photo, boolean isReserved, boolean isAvailable , Long id_inter) {
 		super();
 		this.gid = gid;
 		this.nomPrenom = nomPrenom;
-		IMEI = iMEI;
+		this.IMEI = iMEI;
 		this.telephone = telephone;
 		this.justif = justif;
 		this.prix = prix;
@@ -55,6 +66,7 @@ public class Annonce{
 		this.photo = photo;
 		this.isReserved=isReserved;
 		this.isAvailable= isAvailable;
+		this.idInter=id_inter;
 	}
 	public Long getGid() {
 		return gid;
@@ -93,10 +105,10 @@ public class Annonce{
 		this.isAvailable = IsAvailable;
 	}
 	public boolean getIsReserved() {
-		return isAvailable;
+		return isReserved;
 	}
 	public void setIsReserved(boolean IsReserved) {
-		this.setReserved(IsReserved);
+		this.isReserved=IsReserved;
 	}
 	public String getPrix() {
 		return prix;
@@ -152,14 +164,7 @@ public class Annonce{
 	public void setPhoto(Blob photo) {
 		this.photo = photo;
 	}
-	public boolean isReserved() {
-		return isReserved;
-	}
-	public void setReserved(boolean isReserved) {
-		this.isReserved = isReserved;
-	}
 	private String commune;
-	@Column(name= "geom", columnDefinition= "geometry")
 	private String point;
 	private Blob photo;
 	

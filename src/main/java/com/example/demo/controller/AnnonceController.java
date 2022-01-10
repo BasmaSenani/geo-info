@@ -22,12 +22,22 @@ public class AnnonceController {
 	private AnnonceRepository annRepo;
 	
 
+	@GetMapping("allCommunes")
+	public List<String> getAllCommunes(){
+		return annRepo.findAllCommune();
+	}
 	@GetMapping("annonces")
 	public List<Annonce> getAnnonce(@RequestParam(name="page",defaultValue = "0") int page  ){
 		return annRepo
 				.findAll(PageRequest.of(page, 6))
 				.getContent();
 	}
+
+    @GetMapping("annonces/inter/{id}")
+    public List<Annonce> getByIdInter(@PathVariable Long id ,
+                                      @RequestParam(name="page",defaultValue = "0") int page){
+        return annRepo.findAllByIdInter(PageRequest.of(page,6),id).getContent();
+    }
 
     @GetMapping("annonces/operation/{operation}")
     public List<Annonce> getAnnonceByOperation(@PathVariable(value= "operation") String operation ,
@@ -67,26 +77,33 @@ public class AnnonceController {
 	}
 	
 	@PutMapping("annonces/{id}")
-	public ResponseEntity<Annonce> updateInter(@PathVariable(value= "id") Long interID, @Validated @RequestBody Annonce interDetails) throws ResourceNotFoundException{
-		Annonce inter= annRepo.findById(interID)
-				.orElseThrow(() -> new ResourceNotFoundException("intermediaire not found for this id: "+ interID));
-		inter.setNomPrenom(interDetails.getNomPrenom());
-		inter.setTelephone(interDetails.getTelephone());
-		inter.setIMEI(interDetails.getIMEI());
-		inter.setDescription(interDetails.getDescription());
-		inter.setJustif(interDetails.getJustif());
-		inter.setPoint(interDetails.getPoint());
-		inter.setPrix(interDetails.getPrix());
-		inter.setTypeBien(interDetails.getTypeBien());
-		inter.setTypeOperation(interDetails.getTypeOperation());
-		inter.setSurface(interDetails.getSurface());
-		inter.setDateHeure(interDetails.getDateHeure());
-		inter.setCommune(interDetails.getCommune());
-		inter.setIsAvailable(interDetails.getIsAvailable());
-		inter.setIsReserved(interDetails.getIsReserved());
-		return ResponseEntity.ok(this.annRepo.save(inter));
+	public Annonce updateAnnonce(@PathVariable Long id,  @RequestBody Annonce interDetails) throws ResourceNotFoundException{
+        return annRepo.findById(id)
+                .map(annonce -> {
+                    annonce.setNomPrenom(interDetails.getNomPrenom());
+                    annonce.setTelephone(interDetails.getTelephone());
+                    annonce.setIMEI(interDetails.getIMEI());
+                    annonce.setDescription(interDetails.getDescription());
+                    annonce.setJustif(interDetails.getJustif());
+                    annonce.setPoint(interDetails.getPoint());
+                    annonce.setPrix(interDetails.getPrix());
+                    annonce.setTypeBien(interDetails.getTypeBien());
+                    annonce.setTypeOperation(interDetails.getTypeOperation());
+                    annonce.setSurface(interDetails.getSurface());
+                    annonce.setDateHeure(interDetails.getDateHeure());
+                    annonce.setCommune(interDetails.getCommune());
+                    annonce.setIsAvailable(interDetails.getIsAvailable());
+                    annonce.setIsReserved(interDetails.getIsReserved());
+                    annonce.setId_inter(interDetails.getId_inter());
+                    return annRepo.save(annonce);
+                })
+                .orElseGet(() -> {
+                    interDetails.setGid(id);
+                    return annRepo.save(interDetails);
+                });
 		
 	
 }
+
 
 }
