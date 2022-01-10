@@ -11,4 +11,5 @@ import com.geoInfo.project.model.Intermediaire;
 @Repository
 public interface IntermediaireRepository  extends JpaRepository<Intermediaire, Long> {
 
+    public Intermediaire findByUsername(String username);
 }

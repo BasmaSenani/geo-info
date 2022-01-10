@@ -40,6 +40,11 @@ public class IntermediaireController {
 		return intermediaireRepository.findAll();
 	}
 
+	@RequestMapping(method= RequestMethod.GET, value="/intermediaires/username/{username}")
+	public Intermediaire getIntermediaireByUsername(@PathVariable String username) {
+		return intermediaireRepository.findByUsername(username);
+	}
+
 	// inter by id
 	@RequestMapping(method= RequestMethod.GET, value= "/intermediaires/{id}")
 	public Intermediaire getIntermediaireById(@PathVariable Long id){
@@ -108,6 +113,11 @@ public class IntermediaireController {
 	public String hello() {
 		System.out.println("hello api");
 		return "Hello World";
+	}
+
+	@GetMapping("/hello2")
+	public String interTest() {
+		return "Hello inter";
 	}
 
 

@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import net.bytebuddy.implementation.bytecode.constant.DefaultValue;
 
 import java.util.List;
 
@@ -18,6 +19,11 @@ public class Intermediaire extends User{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(unique = true)
+    private String username ;
+
+    private String password ;
+    private String roles ;
     private String firstName;
 
     private String lastName;
@@ -40,6 +46,6 @@ public class Intermediaire extends User{
     
     private String Commune3;
 
-    private boolean isVerified = false ;
+    private String isVerified = "no";
 
 }
